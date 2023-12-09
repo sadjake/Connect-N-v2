@@ -23,7 +23,7 @@ int main()
 {
     int numRows;
     int numToConnect;
-    int numPlayers; // Added variable for the number of players
+    int numPlayers; 
 
     // get numRows from user
     while (1)

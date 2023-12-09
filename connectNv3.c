@@ -38,14 +38,14 @@ int main()
         }
         else if (numRows > MAXSIZE)
         {
-            printf("ERROR: Board size too large (>%d)\n", MAXSIZE);
+            printf("ERROR: Board size too large (It should be <=%d)\n", MAXSIZE);
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numRows < MINSIZE)
         {
-            printf("ERROR: Board size too small (it should be >%d)\n", MINSIZE);
+            printf("ERROR: Board size too small (it should be >=%d)\n", MINSIZE);
             while (getchar() != '\n')
                 ;
             continue;
@@ -71,14 +71,14 @@ int main()
         }
         else if (numToConnect > numRows - MINCONNECTNUM)
         {
-            printf("ERROR: Number to connect is too large (>%d)\n", (numRows - MINCONNECTNUM));
+            printf("ERROR: Number to connect is too large (It should be <=%d)\n", (numRows - MINCONNECTNUM));
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numToConnect < MINCONNECTNUM)
         {
-            printf("ERROR: Number to connect is too small (<%d)\n", MINCONNECTNUM);
+            printf("ERROR: Number to connect is too small (It should be >=%d)\n", MINCONNECTNUM);
             while (getchar() != '\n')
                 ;
             continue;

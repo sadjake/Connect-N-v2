@@ -31,21 +31,21 @@ int main()
         printf("Enter the number of squares along each edge of the board\n");
         if (scanf("%d", &numRows) != 1)
         {
-            printf("ERROR: The value of numRows is not an integer \n");
+            printf("The value of numRows is not an integer \n");
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numRows > MAXSIZE)
         {
-            printf("ERROR: Board size too large (It should be <=%d)\n", MAXSIZE);
+            printf("Board size too large (It should be <=%d)\n", MAXSIZE);
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numRows < MINSIZE)
         {
-            printf("ERROR: Board size too small (it should be >=%d)\n", MINSIZE);
+            printf("Board size too small (it should be >=%d)\n", MINSIZE);
             while (getchar() != '\n')
                 ;
             continue;
@@ -64,21 +64,21 @@ int main()
         printf("Enter the number of pieces that must form a line to win\n");
         if (scanf("%d", &numToConnect) != 1)
         {
-            printf("ERROR: The value provided was not an integer \n");
+            printf("The value provided was not an integer \n");
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numToConnect > numRows - MINCONNECTNUM)
         {
-            printf("ERROR: Number to connect is too large (It should be <=%d)\n", (numRows - MINCONNECTNUM));
+            printf("Number to connect is too large (It should be <=%d)\n", (numRows - MINCONNECTNUM));
             while (getchar() != '\n')
                 ;
             continue;
         }
         else if (numToConnect < MINCONNECTNUM)
         {
-            printf("ERROR: Number to connect is too small (It should be >=%d)\n", MINCONNECTNUM);
+            printf("Number to connect is too small (It should be >=%d)\n", MINCONNECTNUM);
             while (getchar() != '\n')
                 ;
             continue;
@@ -97,7 +97,7 @@ int main()
         printf("Enter the number of players (2 to 4): ");
         if (scanf("%d", &numPlayers) != 1 || (numPlayers < 2 || numPlayers > 4))
         {
-            printf("ERROR: Please enter a valid number of players (2 to 4).\n");
+            printf("Please enter a valid number of players (2 to 4).\n");
             while (getchar() != '\n')
                 ;
             continue;
@@ -119,7 +119,7 @@ int main()
 
     if (!InitializeBoard(myConnectNBoard, numRows))
     {
-        printf("ERROR: Could not initialize the game board ");
+        printf("Could not initialize the game board ");
         return 0;
     }
 
@@ -132,7 +132,7 @@ int main()
         printf("\n\n");
         if (!DisplayBoard(myConnectNBoard, numRows))
         {
-            printf("ERROR: Could not display the game board ");
+            printf("Could not display the game board ");
         }
 
         printf("Player %d moves\n", playerID);
@@ -142,7 +142,7 @@ int main()
             printf("Enter the column number where you want to put your piece\n");
             if (scanf("%d", &chosenColumn) != 1)
             {
-                printf("ERROR: The value provided was not an integer \n");
+                printf("The value provided was not an integer \n");
                 while (getchar() != '\n')
                     ;
                 continue;
@@ -151,8 +151,8 @@ int main()
             // Check if the column chosen is within the valid range
             if (chosenColumn < 0 || chosenColumn >= numRows)
             {
-                printf("ERROR: Column %d is not on the board: try again \n", chosenColumn);
-                printf("ERROR: Column number should be >= 0 and <%d\n", numRows);
+                printf("Column %d is not on the board: try again \n", chosenColumn);
+                printf("Column number should be >= 0 and <%d\n", numRows);
                 while (getchar() != '\n')
                     ;
                 continue;
@@ -185,7 +185,7 @@ int main()
     printf("\n\n");
     if (!DisplayBoard(myConnectNBoard, numRows))
     {
-        printf("ERROR: Could not display the game board ");
+        printf("Could not display the game board ");
     }
 
     // Display the winner
@@ -199,14 +199,14 @@ int InitializeBoard(int **connectNBoard, int numRowsInBoard)
     // Check if pointer to the board is NULL
     if (connectNBoard == NULL)
     {
-        printf("ERROR: cannot initialize the board because the pointer to the board is NULL\n");
+        printf("Cannot initialize the board because the pointer to the board is NULL\n");
         return 0;
     }
 
     if (numRowsInBoard > MAXSIZE || numRowsInBoard < MINSIZE)
     {
         // check illegal rows
-        printf("ERROR: illegal number of rows in board\n");
+        printf("Illegal number of rows in board\n");
         return 0;
     }
 
@@ -227,14 +227,14 @@ int DisplayBoard(int **connectNBoard, int numRowsInBoard)
     // Check if the pointer to the board is NULL
     if (connectNBoard == NULL)
     {
-        printf("ERROR: cannot display the game board because the pointer to the board is NULL\n");
+        printf("Cannot display the game board because the pointer to the board is NULL\n");
         return 0;
     }
 
     // Check if the number of rows is within the legal range
     if (numRowsInBoard > MAXSIZE || numRowsInBoard < MINSIZE)
     {
-        printf("ERROR: illegal number of rows in board\n");
+        printf("Illegal number of rows in board\n");
         return 0;
     }
 
@@ -292,7 +292,7 @@ int MakeMove(int **connectNBoard, int numRowsInBoard, int playerID, int columnCh
     // Check if the board pointer is NULL
     if (connectNBoard == NULL)
     {
-        printf("ERROR: cannot make a move because the pointer to the board is NULL\n");
+        printf("Cannot make a move because the pointer to the board is NULL\n");
         return 0;
     }
 
